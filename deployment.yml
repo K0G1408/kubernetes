@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: go-app
+spec:
+    replicas: 5
+    selector:
+        matchLabels:
+            name: go-apps
+    template:
+        metadata:
+            labels:
+                name: go-apps
+    spec:
+        containers:
+            name: go-apps
+            image: go-app
+            ports:
+                - containerPort: 3000
